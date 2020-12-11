@@ -89,12 +89,12 @@ public class FXMLController implements Initializable {
         if (firstCard == 20 && secondCard == 20) {
             firstCard = cardNum;
         //Load the image
-            cards.get(cardNum).setImage(new Image(getClass().getResource(imageList.get(cardNum) +".jpg").toString()));
+            cards.get(cardNum).setImage(new Image(getClass().getResource("/"+imageList.get(cardNum) +".jpg").toString()));
         }
         //Checks to see if this is the second card they pushed
         else if (firstCard != 20) {
             secondCard = cardNum;
-            cards.get(cardNum).setImage(new Image(getClass().getResource(imageList.get(cardNum) +".jpg").toString()));
+            cards.get(cardNum).setImage(new Image(getClass().getResource("/"+imageList.get(cardNum) +".jpg").toString()));
 
         //Check to see if the cards match
             if (imageList.get(firstCard).equals(imageList.get(secondCard))) {
