@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="643.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dusome.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="643.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dusome.gameController">
     <children>
         <Button layoutX="161.0" layoutY="580.0" onAction="#btnResetAction" text="Reset" />
         <Label fx:id="lblOut" layoutX="169.0" layoutY="22.0" minHeight="16" minWidth="69" prefHeight="52.0" prefWidth="215.0" text="Matching Game">
