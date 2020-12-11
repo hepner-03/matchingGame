@@ -5,17 +5,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
 
 public class MainApp extends Application {
     private static Stage stage;
+    public static int theme = 0;
 
     @Override
     public void start(@SuppressWarnings("exports") Stage s) throws IOException {
         stage=s;
-        setRoot("game","");
+        //stage.initStyle(StageStyle.TRANSPARENT);
+        setRoot("intro","");
     }
 
     static void setRoot(String fxml) throws IOException {
