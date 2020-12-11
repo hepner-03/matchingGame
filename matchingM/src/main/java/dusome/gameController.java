@@ -14,12 +14,14 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.StageStyle;
 
-public class FXMLController implements Initializable {
+public class gameController implements Initializable {
 
     @FXML
     private Label lblOut;
@@ -76,53 +78,105 @@ public class FXMLController implements Initializable {
         pairsLeft = 8;
     }
 
-    public void placeCard(MouseEvent event) {
+    public void placeCard1(MouseEvent event) {
         putCard(0);
+    }
+    public void placeCard2(MouseEvent event) {
+        putCard(1);
+    }
+    public void placeCard3(MouseEvent event) {
+        putCard(2);
+    }
+    public void placeCard4(MouseEvent event) {
+        putCard(3);
+    }
+    public void placeCard5(MouseEvent event) {
+        putCard(4);
+    }
+    public void placeCard6(MouseEvent event) {
+        putCard(5);
+    }
+    public void placeCard7(MouseEvent event) {
+        putCard(6);
+    }
+    public void placeCard8(MouseEvent event) {
+        putCard(7);
+    }
+    public void placeCard9(MouseEvent event) {
+        putCard(8);
+    }
+    public void placeCard10(MouseEvent event) {
+        putCard(9);
+    }
+    public void placeCard11(MouseEvent event) {
+        putCard(10);
+    }
+    public void placeCard12(MouseEvent event) {
+        putCard(11);
+    }
+    public void placeCard13(MouseEvent event) {
+        putCard(12);
+    }
+    public void placeCard14(MouseEvent event) {
+        putCard(13);
+    }
+    public void placeCard15(MouseEvent event) {
+        putCard(14);
+    }
+    public void placeCard16(MouseEvent event) {
+        putCard(15);
     }
 
     public void putCard(int cardNum) {
-//Check to see if the card has already been used or they clicked on the same one again. If so stop the code
-        if (cards.get(cardNum).isDisabled() == true || firstCard == cardNum) {
+            //Check to see if the card has already been used or they clicked on the same one again. If so stop the code
+        if (cards.get(cardNum).isDisabled() || firstCard == cardNum) {
             return;
         }
 
-//Checks to see if two cards are showing, if they are flip them
+            //Checks to see if two cards are showing, if they are flip them
         if (firstCard != 20 && secondCard != 20) {
-//clear the image
+            //clear the image
             cards.get(firstCard).setImage(null);
             cards.get(secondCard).setImage(null);
-//resets the cards
+            //resets the cards
             firstCard = 20;
             secondCard = 20;
         }
 
-//Checks to see if this is the first card they pushed
+            //Checks to see if this is the first card they pushed
         if (firstCard == 20 && secondCard == 20) {
             firstCard = cardNum;
-//Load the image
-            cards.get(cardNum).setImage(new Image(getClass().getResource(imageList.get(cardNum) + ".jpg").toString()));
+            //Load the image
+            cards.get(cardNum).setImage(new Image(getClass().getResource("/" + imageList.get(cardNum) + ".jpg").toString()));
         }
-//Checks to see if this is the second card they pushed
-        else if (firstCard != 20 && secondCard == 20) {
+            //Checks to see if this is the second card they pushed
+        else if (firstCard != 20) {
             secondCard = cardNum;
-            cards.get(cardNum).setImage(new Image(getClass().getResource(imageList.get(cardNum) + ".jpg").toString()));
-//Check to see if the cards match
+            cards.get(cardNum).setImage(new Image(getClass().getResource("/" + imageList.get(cardNum) + ".jpg").toString()));
+            //Check to see if the cards match
             if (imageList.get(firstCard).equals(imageList.get(secondCard))) {
-//Turn the labels off
+            //Turn the labels off
                 cards.get(firstCard).setDisable(true);
                 cards.get(secondCard).setDisable(true);
-//Reset the card hold variable
+            //Reset the card hold variable
                 firstCard = 20;
                 secondCard = 20;
-//One less pair to find
+            //One less pair to find
                 pairsLeft--;
             }
         }
-//Check to see if you won
+            //Check to see if you won
         if (pairsLeft == 0) {
-            //  JOptionPane.showMessageDialog(rootPane, "You WON!");
+            showInformation("Look At That", "You WON!");
         }
+    }
 
+    public static void showInformation(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.initStyle(StageStyle.UTILITY);
+        alert.setTitle(title);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     @Override
@@ -145,13 +199,13 @@ public class FXMLController implements Initializable {
         cards.add(img15);
         cards.add(img16);
 
-//Add two of each of the possible cards to an array
+        //Add two of each of the possible cards to an array
         for (int i = 0; i < 8; i++) {
             imageList.add(i);
             imageList.add(i);
         }
-        //This randomly sorts the array to move the images around
 
+        //This randomly sorts the array to move the images around
         Collections.shuffle(imageList);
 
     }
