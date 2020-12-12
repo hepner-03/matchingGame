@@ -1,9 +1,6 @@
 package dusome;
 
 /* Matching.java
- * Simple Matching Game Template
- * Made by: Mathew Dusome
- * Created on 1-Nov-2009, updated Aug 13 2015
  */
 
 import java.net.URL;
