@@ -26,7 +26,7 @@ public class introController implements Initializable {
 
     @FXML
     void goBack(MouseEvent event) throws IOException {
-        MainApp.theme = -1;
+        MainApp.theme = MainApp.theme -1;
         imgTheme.setImage(new Image(getClass().getResource("/pictures/" + MainApp.theme + "/7.jpg").toString()));
     }
 
@@ -39,7 +39,7 @@ public class introController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //TODO
+
 
     }
 }

@@ -22,6 +22,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.StageStyle;
 
 public class gameController implements Initializable {
@@ -61,10 +62,43 @@ public class gameController implements Initializable {
     private ImageView img15;
     @FXML
     private ImageView img16;
+    @FXML
+    private Pane pan1;
+    @FXML
+    private Pane pan2;
+    @FXML
+    private Pane pan3;
+    @FXML
+    private Pane pan4;
+    @FXML
+    private Pane pan5;
+    @FXML
+    private Pane pan6;
+    @FXML
+    private Pane pan7;
+    @FXML
+    private Pane pan8;
+    @FXML
+    private Pane pan9;
+    @FXML
+    private Pane pan10;
+    @FXML
+    private Pane pan11;
+    @FXML
+    private Pane pan12;
+    @FXML
+    private Pane pan13;
+    @FXML
+    private Pane pan14;
+    @FXML
+    private Pane pan15;
+    @FXML
+    private Pane pan16;
 
-    //Global Arrays we can use. One of numbers, the other of JLabel types
+    //Global Arrays we can use. One of numbers, One of ImageViews, and the last of Panes types
     ArrayList<Integer> imageList = new <Integer>ArrayList();
     ArrayList<ImageView> cards = new <ImageView>ArrayList();
+    ArrayList<Pane> pane = new <Pane>ArrayList();
     int firstCard = 20; //Variable to hold the first card, start it at a number you know it can't be
     int secondCard = 20; //Variable to hold the second card, start it at a number that you know it can't be
     int pairsLeft = 8; //How many pairs we still have to clear
@@ -76,6 +110,7 @@ public class gameController implements Initializable {
         for (int i = 0; i < 16; i++) {
             cards.get(i).setDisable(false);
             cards.get(i).setImage(null);
+            cards.get(i).setVisible(true);
         }
         //we have to find all 8 sets again
         pairsLeft = 8;
@@ -176,6 +211,8 @@ public class gameController implements Initializable {
                 //Turn the labels off
                 cards.get(firstCard).setDisable(true);
                 cards.get(secondCard).setDisable(true);
+                cards.get(firstCard).setVisible(false);
+                cards.get(secondCard).setVisible(false);
                 //Reset the card hold variable
                 firstCard = 20;
                 secondCard = 20;
