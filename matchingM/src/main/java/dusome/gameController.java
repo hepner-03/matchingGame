@@ -2,11 +2,9 @@ package dusome;
 
 /* Matching.java
  * Simple Matching Game Template
- * Made by: Mathew Dusome
- * Created on 1-Nov-2009, updated Aug 13 2015
  *
- * Edited by: Maximilian Hepner
- * Edited on: 10-Dec-2020, updated Dec 11 2020
+ * Made by: Maximilian Hepner
+ * Created on: 10-Dec-2020, updated Dec 11 2020
  */
 
 import java.net.URL;
@@ -110,7 +108,7 @@ public class gameController implements Initializable {
         for (int i = 0; i < 16; i++) {
             cards.get(i).setDisable(false);
             cards.get(i).setImage(null);
-            cards.get(i).setVisible(true);
+            pane.get(i).setVisible(true);
         }
         //we have to find all 8 sets again
         pairsLeft = 8;
@@ -211,8 +209,8 @@ public class gameController implements Initializable {
                 //Turn the labels off
                 cards.get(firstCard).setDisable(true);
                 cards.get(secondCard).setDisable(true);
-                cards.get(firstCard).setVisible(false);
-                cards.get(secondCard).setVisible(false);
+                pane.get(firstCard).setVisible(false);
+                pane.get(secondCard).setVisible(false);
                 //Reset the card hold variable
                 firstCard = 20;
                 secondCard = 20;
@@ -252,6 +250,25 @@ public class gameController implements Initializable {
         cards.add(img14);
         cards.add(img15);
         cards.add(img16);
+
+
+        pane.add(pan1);
+        pane.add(pan2);
+        pane.add(pan3);
+        pane.add(pan4);
+        pane.add(pan5);
+        pane.add(pan6);
+        pane.add(pan7);
+        pane.add(pan8);
+        pane.add(pan9);
+        pane.add(pan10);
+        pane.add(pan11);
+        pane.add(pan12);
+        pane.add(pan13);
+        pane.add(pan14);
+        pane.add(pan15);
+        pane.add(pan16);
+
 
         //Add two of each of the possible cards to an array
         for (int i = 0; i < 8; i++) {
